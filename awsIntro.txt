@@ -1,0 +1,77 @@
+
+# The basic facilities provided by AWS are:
+1. *EC2 (Elastic Compute Cloud)*
+2. *S3 (Simple Storage Service)*
+3. *ELB (Elastic Load Balancer)*
+4. *CloudWatch (Apps and Infrastructure Monitoring)*
+5. *RDS (Relational Database Service)*
+
+# How to create an AWS EC2 instance:
+*EC2 is a type of virtual machine which stands for Elastic Compute Cloud.*
+
+## Using AWS CLI:
+1. *Open your terminal or command prompt.*
+2. *Configure your AWS CLI with your credentials:*
+    ```sh
+    aws configure
+    ```
+    *Enter the details i.e after configuring the credentials you will get that*
+3. *Run the following command to create an EC2 instance:*
+    ```sh
+    aws ec2 run-instances --image-id ami-0abcdef1234567890 --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-0123456789abcdef0 --subnet-id subnet-6e7f829e
+    ```
+
+## Using AWS Web Console:
+1. *Open the AWS Management Console.*
+2. *Navigate to the EC2 Dashboard.*
+3. *Click on "Launch Instance".*
+4. *Follow the steps to choose an Amazon Machine Image (AMI), instance type, configure instance details, add storage, add tags, configure security group, and review.*
+5. *Click on "Launch" and select or create a key pair.*
+6. *Your instance will be launched and available in the EC2 Dashboard.*
+
+# To access your EC2 instance through CMD or Any terminal You can use:
+
+ssh -i path to your .pem file ubuntu@public ip address
+
+Commands of Linux:-------------------------------------
+1. ls (list) - it will show the files and folders present in current file
+2. pwd - present working directory
+3. cd (change directory) - cd foldername is used to change the pwd
+4. cd .. - go back to 1 previous directory
+5. cd ../.. - go back to two previous directory
+6. ls -ltr - it will show all the files and folders along with time its created and if the name starts with "d" then its a directory else its a file
+7. vi - create a new file a write or read file (to write into it press ESC then i(insert mode))
+8. :wq! - to save the file 
+9. cat filename - to display file content 
+10. mkdir - create a new directory
+11. rm - remove file
+12. rm -r - remove directory
+13. free -g - show memory status in sys 
+14. nproc - shows the number of cpu
+15. df -h - shows the disk related information 
+16. top - it will show all the info about memory cpu and all
+36. mv - rename or move files and directories
+37. cp - copy files and directories
+38. ln - create hard and symbolic links
+39. du - estimate file space usage
+40. find - search for files in a directory hierarchy
+
+# Additional Linux Commands for DevOps:
+18. ps -aux - display all running processes
+19. grep - search for a specific pattern in files
+20. tail -f filename - display the last few lines of a file and follow updates
+21. chmod - change file permissions
+22. chown - change file owner and group
+23. scp - secure copy files between hosts
+24. rsync - synchronize files and directories between two locations
+25. systemctl - control the systemd system and service manager
+26. journalctl - query and display messages from the journal
+27. netstat - display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+28. iptables - configure the IP packet filter rules of the Linux kernel
+29. curl - transfer data from or to a server
+30. wget - download files from the web
+31. docker - manage Docker containers
+32. kubectl - control Kubernetes clusters
+33. ansible - automate configuration management, application deployment, and task automation
+34. terraform - infrastructure as code tool for building, changing, and versioning infrastructure safely and efficiently
+35. git - version control system to track changes in source code during software development
