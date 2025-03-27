@@ -1,0 +1,5 @@
+imagin you have to give a report of all the active instances of your server that may be EC2 , S3 , lamda  etc at exactly 6pm but 
+due to some problem you wil not be available at 6pm , so as devops engineer what we do , is to automate that 
+
+In this time the concept of cronjob comes into pitcher , It shedules the task or exicutes the task in a prefixed time
+ex - 
