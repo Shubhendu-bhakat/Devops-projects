@@ -14,7 +14,7 @@
 2. *Configure your AWS CLI with your credentials:*
     ```sh
     aws configure
-    ```
+    ```qqqq
     *Enter the details i.e after configuring the credentials you will get that*
 3. *Run the following command to create an EC2 instance:*
     ```sh
@@ -46,15 +46,65 @@ Commands of Linux:-------------------------------------
 10. mkdir - create a new directory
 11. rm - remove file
 12. rm -r - remove directory
+
+ // system cpu , memory and process status commands
 13. free -g - show memory status in sys 
 14. nproc - shows the number of cpu
 15. df -h - shows the disk related information 
 16. top - it will show all the info about memory cpu and all
+
+///always write the command as set -x i.e it will show the command first then the output 
+                set -x #debug mode
+                nproc
+                df -h 
+                free -g
+
+                output
+                +nproc
+                //
+                +df -h 
+
 36. mv - rename or move files and directories
 37. cp - copy files and directories
 38. ln - create hard and symbolic links
 39. du - estimate file space usage
 40. find - search for files in a directory hierarchy
+
+41. man anycommand - It will give you all kind of info about that command
+42. vi - It is used to write in a file 
+43. ./ = used to exicute any exicutable file in Linux
+
+
+
+
+44. chmod = it is used to grant the permissions (ch - change )
+
+
+linux usage the numbers as : 
+        4- read      user(root) - it is being represented by 1st number
+                    group - 2nd number
+                    everyone who is login - 3rd number
+        2- write
+        1-exicute
+so , In ordre to grant the permission to all the user of every opertaion You should use 
+        chmod 777 filename
+        7- all permission for root user
+        7- all permission for group
+        7- all permission for everyone
+so , to give a file permission of only read by other user except the root user you will use
+        chmod 744 filename
+
+
+44.history - It will give you all the commands that are being used since the terminal is Open
+
+
+
+45  trap - It is an powerfull signal which trap the signal and perform the opertaion 
+        As the linux uses signals to track every momment as when we press ctrl+c there is signal generated called SIGNINTR 
+        as a user you can trap this and perform the desired opertaion
+         ex - trap echo "dont use ctrl+c" SIGNINTR
+
+
 
 # Additional Linux Commands for DevOps:
 18. ps -aux - display all running processes
@@ -75,3 +125,32 @@ Commands of Linux:-------------------------------------
 33. ansible - automate configuration management, application deployment, and task automation
 34. terraform - infrastructure as code tool for building, changing, and versioning infrastructure safely and efficiently
 35. git - version control system to track changes in source code during software development
+
+
+shebang is shell scripting 
+
+there are 4 type of shebang used in shell scripting 
+1. #!/bin/sh  
+2. #!/bin/bash -- try to us this mostly
+3. #!/bin/dash
+4. #!/bin/kash
+
+
+
+50. ps -ef == gives you the details of all running process
+51. ps -ef | grep "any process you want to find" - it will give you the process whihc have same grep
+ ex- pa -ef | grep "amazon" --- It will return all the process that are running by amazon
+
+52. | (pipe ) - it is used to filter the result of first command based on the grep condition
+
+interview question - 
+what is the output of Date | echo "date is "
+ans - date is {as the date is the default shell scripting command it will send output to stdIn not to pipe and pipe only
+passes the information when it is not passing to stdIn}
+
+53. awk == it is used to return a specific column from your result 
+ex- ps -ef | grep amazon | awk -F"" 'print{$2}'
+
+54. set -e - it used to exit when there is an error , but if it will not exit when there is a pipe
+55. set -o pipefailure - it will exit when pipefails 
+56. curl - it retrives the formation form internet
